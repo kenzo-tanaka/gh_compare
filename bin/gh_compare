@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+raise ArgumentError, "wrong number of arguments (given #{ARGV.length}, expected 2)" if ARGV.length != 2
+
+require_relative '../lib/gh_compare'
+compare = GhCompare::CommitCompare.new
+puts compare.compare_url(ARGV[0], ARGV[1])

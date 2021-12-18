@@ -1,4 +1,4 @@
-require "gh_compare/version"
+require 'uri'
 
 module GhCompare
   class Error < StandardError; end
