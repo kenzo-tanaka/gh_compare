@@ -14,6 +14,10 @@ module GhCompare
       remote_url? ? remote_origin.gsub(/\.git$/, '') : ssh_to_url
     end
 
+    def compare_url(from, to)
+      remote_url + "/compare/#{from}...#{to}"
+    end
+
     private
 
     def get_remote_origin
