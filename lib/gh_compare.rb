@@ -18,8 +18,8 @@ module GhCompare
       remote_url + "/compare/#{from}...#{to}"
     end
 
-    def compare_before(n)
-      'https://github.com/kenzo-tanaka/test/compare/6ac8a0a82033ef1cbaf2883dfd3aca6e6f77a36f...109d0bcc7fa26dcacbac8c6607fd0ca218346f96'
+    def compare_before(num)
+      compare_url(head, head_before(num))
     end
 
     private
@@ -34,6 +34,14 @@ module GhCompare
 
     def ssh_to_url
       "https://github.com/#{remote_origin.gsub(/git@github.com:/, '').gsub(/\.git$/, '')}"
+    end
+
+    def head
+      `git rev-parse HEAD`.strip
+    end
+
+    def head_before(num)
+      `git rev-parse HEAD~#{num}`.strip
     end
   end
 end
