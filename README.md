@@ -6,17 +6,9 @@ Generate GitHub compare url like [this](https://github.com/kenzo-tanaka/gh_compa
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'gh_compare'
+```shell
+gem install gh_compare
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install gh_compare
 
 ## Usage
 
