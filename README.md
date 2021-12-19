@@ -14,10 +14,16 @@ gem install gh_compare
 
 ```shell
 gh_compare -n [number]
+
+# e.g. Generates a comparison URL from 3 commits ago to HEAD
+gh_compare -n 3
 ```
 
 ```shell
-gh_compare -d [from-hash] [to-hash]
+gh_compare -d [from-hash],[to-hash]
+
+# e.g. Generate a comparison URL from [from-hash] to [to-hash]
+gh_compare -d c794e7718ef18011b9d96f812f62f31608deeca8,45c38cac44e96ee2545f1e70dba80b23058309bf
 ```
 
 ## Development
