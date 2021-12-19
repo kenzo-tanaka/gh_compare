@@ -18,6 +18,10 @@ module GhCompare
       remote_url + "/compare/#{from}...#{to}"
     end
 
+    def compare_before(num)
+      compare_url(head_before(num), head)
+    end
+
     private
 
     def get_remote_origin
@@ -30,6 +34,14 @@ module GhCompare
 
     def ssh_to_url
       "https://github.com/#{remote_origin.gsub(/git@github.com:/, '').gsub(/\.git$/, '')}"
+    end
+
+    def head
+      `git rev-parse HEAD`.strip
+    end
+
+    def head_before(num)
+      `git rev-parse HEAD~#{num}`.strip
     end
   end
 end
