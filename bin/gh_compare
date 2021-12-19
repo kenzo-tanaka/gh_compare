@@ -1,22 +1,4 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/gh_compare'
-require 'optparse'
-options = {}
-
-OptionParser.new do |opt|
-  opt.on('--n=NUM', Integer) { |v| options[:num] = v }
-  opt.on('--d==V,V', Array) { |v| options[:commits] = v }
-
-  opt.parse!(ARGV)
-end
-
-if options[:num]
-  compare = GhCompare::CommitCompare.new
-  puts compare.compare_before(options[:num])
-end
-
-if options[:commits]
-  compare = GhCompare::CommitCompare.new
-  puts compare.compare_url(options[:commits][0], options[:commits][1])
-end
+require_relative '../lib/gh_compare/exec/commit_compare'
+puts GhCompare::Exec::CommitCompare.new(ARGV).run
