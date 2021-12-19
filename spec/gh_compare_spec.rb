@@ -55,8 +55,8 @@ RSpec.describe GhCompare do
     end
 
     before 'fix commit hash' do
-      allow(commit_compare).to receive(:head).and_return('6ac8a0a82033ef1cbaf2883dfd3aca6e6f77a36f')
-      allow(commit_compare).to receive(:head_before).and_return('109d0bcc7fa26dcacbac8c6607fd0ca218346f96')
+      allow(commit_compare).to receive(:head_before).and_return('6ac8a0a82033ef1cbaf2883dfd3aca6e6f77a36f')
+      allow(commit_compare).to receive(:head).and_return('109d0bcc7fa26dcacbac8c6607fd0ca218346f96')
     end
 
     subject { commit_compare.compare_before(3) }

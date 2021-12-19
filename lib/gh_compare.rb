@@ -19,7 +19,7 @@ module GhCompare
     end
 
     def compare_before(num)
-      compare_url(head, head_before(num))
+      compare_url(head_before(num), head)
     end
 
     private
