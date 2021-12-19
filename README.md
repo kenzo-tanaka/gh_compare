@@ -13,7 +13,11 @@ gem install gh_compare
 ## Usage
 
 ```shell
-gh_compare [from-hash] [to-hash]
+gh_compare -n [number]
+```
+
+```shell
+gh_compare -d [from-hash] [to-hash]
 ```
 
 ## Development
