@@ -10,8 +10,8 @@ module GhCompare::Exec
     end
 
     def run
-      compare_before if num_arg_passed?
-      compare_url if commit_arg_passed?
+      return compare_before if num_arg_passed?
+      return compare_url if commit_arg_passed?
     end
 
     private
